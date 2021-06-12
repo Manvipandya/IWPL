@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost:8080/HelloREST/index.html -->
+<html lang="en"><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone</title>
+  <link href="./Phone_files/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root"><div class="container">
+  <div><p>Donor Name : Manvi Pandya </p><p>Blood Type : A+ </p><p>Age : 21</p><p>Rating : 9</p></div><hr>
+  <div><p>Donor Name : Neha Jaju </p><p>Blood Type : AB+ </p><p>Age : 21</p><p>Rating : 9</p></div><hr>
+  <div><p>Donor Name : Shyamal Khachane </p><p>Blood Type : B+ </p><p>Age : 21</p><p>Rating : 9</p></div><hr>
+  <div><p>Donor Name : ABC </p><p>Blood Type : O+ </p><p>Age : 25</p><p>Rating : 6</p></div><hr>
+  <div><p>Donor Name : XYZ </p><p>Blood Type : 0- </p><p>Age : 28</p><p>Rating : 8</p></div><hr>
+  
+  <script src="./Phone_files/scripts.js.download"></script>
+
+
+</body></html>
